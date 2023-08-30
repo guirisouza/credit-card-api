@@ -65,4 +65,8 @@ Basta rodar:
 
     make test
 
+## Diagramas
+O projeto contém diagramas de sequencia usando o plantuml assim
+podendo ser versionado conforme evolução do projeto
 
+![alt text](https://i.ibb.co/S035ScN/Selection-279.png)
