@@ -22,6 +22,9 @@ def authenticate_user(username: str, password: str, db) -> UsersModel:
     crypt_handler = CryptHandler()
     crypt_handler.load_fernet()
     user = UserRepository().get_user_by_username(username=username, db=db)
+    if not user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail="User not found")
     decrypted_password = crypt_handler.decrypt(data=user.password).decode()
     if not user:
         raise HTTPException(status_code=status.HTTP_401,
