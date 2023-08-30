@@ -21,6 +21,7 @@ A aplicação foi desenvolvida em FastAPI e possui documentação Swagger e Redo
 - [ ] Testar domínio de `user`
 - [ ] Config banco de dados teste
 - [ ] Docker-compose
+- [ ] Melhorar a doc com exemplo de response
 
 
 ## Rodando a aplicação
