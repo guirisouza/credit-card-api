@@ -18,6 +18,8 @@ class CryptHandler:
         key = Fernet.generate_key()
         with open("key.key", "wb") as key_file:
             key_file.write(key)
+            self.key = key
+        self.fernet = Fernet(self.key)
 
     def _load_key(self):
         """
@@ -68,10 +70,9 @@ class CreditCardHelper:
             Get credit card brand by number
         :return: string
         """
-        try:
-            return CreditCard(number=number).get_brand()
-        except BrandNotFound:
-            return "Visa" # Todo: is Visa the default? Should be a param of the function or even come from the configs?
+        #todo implement brand resource
+        return CreditCard(number=number).get_brand()
+
 
     @classmethod
     def parse_date(cls, date: str) -> datetime:
