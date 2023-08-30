@@ -100,7 +100,6 @@ def test_create_valid_credit_card_whitout_cvv(
     )
     body_response = response.json()
 
-
     credit_cards = db_session.query(CreditCardModel).filter(
         CreditCardModel.id == body_response.get('id')
     ).all()
