@@ -1,9 +1,7 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, Path, HTTPException
+from fastapi import APIRouter, Depends, Path
 from sqlalchemy.orm import Session
-from starlette import status
-
 from database.database import get_db
 from src.credit_card.repository import CreditCardRepository
 from src.credit_card.schemas import CreditCardCreateSchema
