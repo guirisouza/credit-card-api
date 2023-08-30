@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Date, Integer, LargeBinary, String
+from sqlalchemy import Column, Date, Integer, String
 
 from database.base import BaseModel
 from src.credit_card.custom_types import CreditCardNumber
