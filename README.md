@@ -12,6 +12,8 @@ A aplicação foi desenvolvida em FastAPI e possui documentação Swagger e Redo
 * JWT (Para geração de token e controle de autenticação)
 * Fernet (Usado para criptografar dados do cartão e senha)
 * Pytest
+* SQLite
+* SQLAlchemy
 
 #### TODO Melhorias
 
