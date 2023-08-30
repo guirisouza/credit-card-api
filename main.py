@@ -2,6 +2,8 @@ from pathlib import Path
 from fastapi import FastAPI
 from src.router import api_router
 from database.database import engine, Base
+from fastapi.openapi.utils import get_openapi
+
 
 APP_ROOT = Path(__file__).parent
 
@@ -21,4 +23,14 @@ def get_app() -> FastAPI:
         prefix="/api/v1",
         router=api_router,
     )
+    openapi_schema = get_openapi(
+        title="credit-card-api",
+        version="1.0",
+        description="Teste desenvolvido para MaisTodos por "
+                    "<a href='https://www.linkedin.com/in/guilherme-ribeiro-de-souza/'>Guilherme Ribeiro</a>",
+        routes=app.routes
+    )
+
+    app.openapi_schema = openapi_schema
+
     return app
