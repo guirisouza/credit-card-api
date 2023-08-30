@@ -44,6 +44,8 @@ Para parar a aplicação
 _o `make stop` irá para o container e o remover, portanto, caso queira
 rodar de novo, será necessário buildar `make build`_
 
+![alt text](https://i.ibb.co/3p9Zp8h/Design-sem-nome-5.png)
+
 ## Testes
 Fora feito testes de integração cobrindo o domínio de `credit_cards`
 
