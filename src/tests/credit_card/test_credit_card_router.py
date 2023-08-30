@@ -5,8 +5,15 @@ from fastapi.testclient import TestClient
 
 from main import get_app
 from src.credit_card.models import CreditCardModel
+from src.user.utils import get_current_user
 
-client = TestClient(get_app())
+app = get_app()
+def skip_auth():
+    pass
+
+app.dependency_overrides[get_current_user] = skip_auth
+
+client = TestClient(app)
 
 PREFIX_API_ADDRESS = "/api/v1"
 
