@@ -51,7 +51,7 @@ http://0.0.0.0:8000/docs
 Para parar a aplicação
 
     make stop
-_o `make stop` irá para o container e o remover, portanto, caso queira
+_o `make stop` irá parar o container e o remover, portanto, caso queira
 rodar de novo, será necessário buildar `make build`_
 
 ![alt text](https://i.ibb.co/3p9Zp8h/Design-sem-nome-5.png)
