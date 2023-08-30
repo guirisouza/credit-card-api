@@ -14,6 +14,7 @@ A aplicação foi desenvolvida em FastAPI e possui documentação Swagger e Redo
 * Pytest
 * SQLite
 * SQLAlchemy
+* Docker
 
 #### TODO Melhorias
 
