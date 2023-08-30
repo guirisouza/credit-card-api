@@ -22,7 +22,13 @@ A aplicação foi desenvolvida em FastAPI e possui documentação Swagger e Redo
 - [ ] Config banco de dados teste
 - [ ] Docker-compose
 - [ ] Melhorar a doc com exemplo de response
+- [ ] Conf de env var
 
+## Instruções de uso dos recursos da API
+
+A API tem esquema de autenticação via JWT.
+No docs, você precisará criar um usuário pelo endpoint de Create User, após usuário criado, ir
+em authenticate e fazer o login. Feito isso, você conseguirá consumir os endpoints.
 
 ## Rodando a aplicação
 Para rodar aplicação foi criado um `makefile` que se encontra na raiz do projeto. Para rodar
