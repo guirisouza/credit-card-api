@@ -155,13 +155,13 @@ def test_correct_list_credit_card(credit_cards_on_db):
         }
     ]
 
-# TODO: do the same as above
+
 def test_exist_get_credit_card_by_id(credit_card_on_db):
     response = client.get(f"{PREFIX_API_ADDRESS}/credit-card/{credit_card_on_db.id}")
 
-    assert response.status_code == status.HTTP_200_OK
     body_response = response.json()
 
+    assert response.status_code == status.HTTP_200_OK
     del body_response["created_at"]
     assert body_response == {
         "number": credit_card_on_db.number.decode(),
@@ -171,11 +171,11 @@ def test_exist_get_credit_card_by_id(credit_card_on_db):
         "id": credit_card_on_db.id
     }
 
-# TODO: the same as above, move the asserts to be together at the end of the test
+
 def test_not_exist_get_credit_card_by_id():
     response = client.get(f"{PREFIX_API_ADDRESS}/credit-card/{999}")
 
-    assert response.status_code == status.HTTP_404_NOT_FOUND
     body_response = response.json()
 
+    assert response.status_code == status.HTTP_404_NOT_FOUND
     assert body_response["detail"] == f"Credit Card id {999} not found"
