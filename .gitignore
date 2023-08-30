@@ -78,6 +78,9 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 .idea
+key.key
+sql_app.db
+sql_app_test.db
 # IPython
 profile_default/
 ipython_config.py
