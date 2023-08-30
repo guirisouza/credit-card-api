@@ -1,0 +1,33 @@
+@startuml
+title Create Credit Card sequential diagram
+actor client as fe
+participant API as api
+
+fe -> api: POST /api/v1/credit-card
+/note over api: The card "number" is encrypted using Fernet  \n and stored in database
+fe <- api: response 201 created
+note left
+    /api/v1/credit-card
+    POST payload:
+    <color #118888>{</color>
+    <color #118888>     "number": ""</color>
+    <color #118888>     "holder": ""</color>
+    <color #118888>     "cvv": ""</color>
+    <color #118888>     "exp_date": ""</color>
+    <color #118888>}</color>
+end note
+
+note right
+
+    response payload:
+    <color #118888>{</color>
+    <color #118888>     "id": ""</color>
+    <color #118888>     "number": ""</color>
+    <color #118888>     "holder": ""</color>
+    <color #118888>     "cvv": ""</color>
+    <color #118888>     "exp_date": ""</color>
+    <color #118888>}</color>
+end note
+/note over api: The card "number" is decryted using Fernet  \n when retrieved from database and \n returned into response payload
+
+@enduml
