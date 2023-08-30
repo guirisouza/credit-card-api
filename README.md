@@ -52,6 +52,5 @@ Para rodas os testes a aplicação deve estar rodando conforme as instruções a
 Basta rodar:
 
     make test
-_o `make stop` irá para o container e o remover, portanto, caso queira
-rodar de novo, será necessário buildar `make build`_
+
 
