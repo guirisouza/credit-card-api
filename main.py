@@ -1,9 +1,10 @@
 from pathlib import Path
+
 from fastapi import FastAPI
-from src.router import api_router
-from database.database import engine, Base
 from fastapi.openapi.utils import get_openapi
 
+from database.database import Base, engine
+from src.router import api_router
 
 APP_ROOT = Path(__file__).parent
 

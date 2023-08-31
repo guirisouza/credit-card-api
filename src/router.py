@@ -1,6 +1,6 @@
 from fastapi.routing import APIRouter
-from src import credit_card
-from src import user
+
+from src import credit_card, user
 
 api_router = APIRouter()
 

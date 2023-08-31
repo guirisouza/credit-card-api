@@ -1,6 +1,7 @@
 import re
-from pydantic import BaseModel, validator
 from datetime import datetime
+
+from pydantic import BaseModel, validator
 
 
 class CreateUserInputSchema(BaseModel):

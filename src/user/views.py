@@ -1,15 +1,16 @@
 from datetime import timedelta
-
-from fastapi import Depends, APIRouter
 from typing import Annotated
 
+from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
+
 from database.database import get_db
-from src.user.repository import UserRepository
 from src.credit_card.utils import CryptHandler
+from src.user.repository import UserRepository
 from src.user.schemas import CreateUserInputSchema
-from src.user.utils import authenticate_user, create_access_token, get_current_user
+from src.user.utils import (authenticate_user, create_access_token,
+                            get_current_user)
 
 router = APIRouter()
 

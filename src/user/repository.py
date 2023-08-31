@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from src.user.schemas import CreateUserInputSchema
 from src.user.models import UsersModel
+from src.user.schemas import CreateUserInputSchema
 
 
 class UserRepository:

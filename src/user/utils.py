@@ -1,11 +1,9 @@
+from datetime import datetime, timedelta
 from typing import Annotated
 
-
-from fastapi import HTTPException, Depends
-from datetime import datetime, timedelta
-
+from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
-from jose import jwt, JWTError
+from jose import JWTError, jwt
 from starlette import status
 
 from src.credit_card.utils import CryptHandler
