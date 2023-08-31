@@ -9,5 +9,5 @@ class CreditCardModel(BaseModel):
 
     number = Column(CreditCardNumber)
     holder = Column(String, nullable=True)
-    cvv = Column(Integer)
+    cvv = Column(String, nullable=True)
     exp_date = Column(Date)
