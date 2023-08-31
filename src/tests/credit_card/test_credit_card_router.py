@@ -124,7 +124,7 @@ def test_correct_list_credit_card(credit_cards_on_db):
     assert body_response == [
         {
             "created_at": "2023-08-01T00:00:00",
-            "cvv": 544,
+            "cvv": "544",
             "exp_date": "2023-10-17",
             "holder": "José Carlos",
             "id": 1,
@@ -132,14 +132,14 @@ def test_correct_list_credit_card(credit_cards_on_db):
         },
         {
             "created_at": "2023-08-01T00:00:00",
-            "cvv": 655,
+            "cvv": "655",
             "exp_date": "2023-10-17",
             "holder": "Vitor Trindade",
             "id": 2,
             "number": "5290896515399433"},
         {
             "created_at": "2023-08-01T00:00:00",
-            "cvv": 677,
+            "cvv": "677",
             "exp_date": "2023-10-17",
             "holder": "João Paulo",
             "id": 3,
@@ -147,7 +147,7 @@ def test_correct_list_credit_card(credit_cards_on_db):
         },
         {
             "created_at": "2023-08-01T00:00:00",
-            "cvv": 855,
+            "cvv": "855",
             "exp_date": "2023-10-17",
             "holder": "Fernanda Silva",
             "id": 4,
