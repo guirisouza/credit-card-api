@@ -1,6 +1,6 @@
 import re
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import BaseModel, validator
 
@@ -13,11 +13,24 @@ class CreditCardBaseSchema(BaseModel):
 
     number: str
     holder: str
-    cvv: str = Optional[str]
+    cvv: Optional[str] = None
     exp_date: str
 
 
 class CreditCardCreateSchema(CreditCardBaseSchema):
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "number": "4024007179919260",
+                    "holder": "Guilherme Ribeiro",
+                    "cvv": "655",
+                    "exp_date": "07/2030",
+                }
+            ]
+        }
+    }
     @validator('number')
     def validate_credit_card_number(cls, value):
         if not CreditCardHelper.credit_card_number_validator(number=value):
@@ -49,3 +62,31 @@ class CreditCardSchema(CreditCardBaseSchema):
 
     class Config:
         from_attributes = True
+
+class CreditCardSchemaResponse(BaseModel):
+    id: int
+    number: str
+    holder: str
+    cvv: Optional[str]
+    exp_date: Union[str | datetime]
+    created_at: datetime
+
+    @validator('exp_date')
+    def exp_date_parse(cls, value):
+        return str(value.date())
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "id": 1,
+                    "number": "4024007179919260",
+                    "holder": "Guilherme Ribeiro",
+                    "cvv": "655",
+                    "exp_date": "2030-07-20",
+                }
+            ]
+        }
+    }
+
+
