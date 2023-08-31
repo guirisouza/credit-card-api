@@ -12,14 +12,8 @@ class CreditCardRepository:
             db: Session,
             credit_card_schema: CreditCardCreateSchema,
             date) -> CreditCardModel:
-        if credit_card_schema.cvv:
-            credit_card_schema.cvv = None
-        db_credit_card = CreditCardModel(
-            number=credit_card_schema.number,
-            cvv=credit_card_schema.cvv,
-            holder=credit_card_schema.holder,
-            exp_date=date
-        )
+        credit_card_schema.exp_date = date
+        db_credit_card = CreditCardModel(**credit_card_schema.__dict__)
         db.add(db_credit_card)
         db.commit()
         db.refresh(db_credit_card)
